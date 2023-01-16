@@ -1,0 +1,41 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+            +
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Bank</th>
+                        <th>Account Number</th>
+                        <th>Account Holder</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% banks.forEach((bank, index) => { %>
+                        <tr>
+                            <td><%= ++index %></td>
+                            <td><%= bank.bankName %></td>
+                            <td><%= bank.accountNumber %></td>
+                            <td><%= bank.userName %></td>
+                            <td><img src="http://localhost:3000/<%= bank.imageUrl %>" height="50"/></td>
+                            <td>
+                                <form action="/admin/bank/<%= bank._id %>?_method=DELETE" method="post">
+                                    <button type="button" data-id="<%= bank.id %>" data-bankname="<%= bank.bankName %>" data-username="<%= bank.userName %>" data-accountnumber="<%= bank.accountNumber %>"class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

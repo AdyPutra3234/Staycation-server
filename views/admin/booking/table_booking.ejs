@@ -1,0 +1,42 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Member</th>
+                        <th>Bank Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% bookings.forEach((booking, index) => { %>
+                        <tr>
+                            <td><%= ++index %></td>
+                            <td><%= booking.startDate.toLocaleString() %></td>
+                            <td><%= booking.endDate.toLocaleString() %></td>
+                            <td><%= booking.itemId.title %></td>
+                            <td><strong>$ </strong><%= booking.itemId.price %></td>
+                            <td><%= booking.memberId.firstName %>  <%= booking.memberId.lastName %></td>
+                            <td><%= booking.bankId.bankName %></td>
+                            <td><%= booking.payments.status %></td>
+                            <td>
+                                <a href="/admin/booking/<%= booking._id %>" class="btn btn-info">detail</i></a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

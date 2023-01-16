@@ -1,0 +1,55 @@
+<div class="tab-pane fade show active" id="show-feature" role="tabpanel" aria-labelledby="show-table-tab">
+    <div class="card shadow mb-4 mt-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="http://localhost:3000/<%= booking.payments.proofOfPayment %>" class="d-block shadow" width="350" alt="proof of payment" />
+                </div>
+
+                <div class="col-md-8 d-flex align-items-center" >
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tableFeature" width="100%" cellspacing="0">
+                                <tr>
+                                    <th>Member Name</th>
+                                    <td><%= booking.memberId.firstName %> <%= booking.memberId.lastName %></td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td><strong>$</strong> <%= booking.total %></td>
+                                </tr>
+                                <tr>
+                                    <th>Bank from</th>
+                                    <td><%= booking.payments.bankFrom %></td>
+                                </tr>
+                                <tr>
+                                    <th>Item</th>
+                                    <td><%= booking.itemId.title %></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card-header py-3 mt-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="/admin/booking" class="btn btn-warning ml-3">Back</a>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="d-flex justify-content-center">
+                            <% if (booking.payments.status === "Accepted" || booking.payments.status === "Rejected") { %>
+                                <p >Confirmed <i class="fas fa-check"></i></p>
+                            <% } else { %>
+                                <form action="/admin/booking/<%= booking._id %>/accept?_method=PUT" method="post">
+                                    <button type="submit" class="btn btn-success"><i class="fas fa-check"> Accept</i></button>
+                                </form>
+                                <form action="/admin/booking/<%= booking._id %>/reject?_method=PUT" method="post">
+                                    <button type="submit" class="btn btn-danger ml-2"><i class="fas fa-times"> Reject</i></button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

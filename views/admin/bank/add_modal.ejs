@@ -1,0 +1,37 @@
+<div class="modal"  id="addModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Bank</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="/admin/bank" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-group">
+                  <label for="bankName">Bank</label>
+                  <input type="text" name="bankName" class="form-control" id="bankName" placeholder="bank name" aria-describedby="bank name" required>
+                </div>
+                <div class="form-group">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" name="accountNumber" class="form-control" id="accountNumber" placeholder="Account Number" aria-describedby="account number" required>
+                </div>
+                <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" name="userName" class="form-control" id="userName" placeholder="user name" aria-describedby="user name" required>
+                </div>
+                <div class="form-group">
+                <label for="bankImae">Image</label>
+                <input type="file" name="image" class="form-control" id="bankImae" placeholder="image" aria-describedby="image" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+        </div>
+    </div>
+  </div>
+  

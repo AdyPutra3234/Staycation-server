@@ -1,0 +1,38 @@
+<div class="tab-pane fade" id="form-add" role="tabpanel" aria-labelledby="form-add-tab">
+    <div class="card shadow mb-4 mt-2">
+        <div class="card-body">
+            <form action="/admin/item" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Ttile</label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" aria-describedby="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" name="price" class="form-control" id="price" placeholder="Enter price" aria-describedby="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" name="city" class="form-control" id="city" placeholder="Enter city" aria-describedby="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" name="categoryId">
+                        <option value="">Select Category</option>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category._id %>"> <%= category.name %> </option>
+                        <% })%>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" name="image" class="form-control" id="image" aria-describedby="category image" multiple required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea type="text" name="description" class="form-control" id="description" aria-describedby="description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
