@@ -5,20 +5,18 @@
                 <div class="col-md-5">
                     <form action="/admin/item/<%= itemId %>/feature" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Feature name" aria-describedby="feature name" required>
+                            <label for="category">Feature</label>
+                            <select class="form-control" name="featureCategoryId" id="featureCategoryId">
+                                <option value="">Select feature</option>
+                                <% featureCategories.forEach(category => { %>
+                                    <option value="<%= category._id %>"> <%= category.name %> </option>
+                                <% })%>
+                            </select>
                         </div>
-
                         <div class="form-group">
                             <label for="qty">Quantity</label>
                             <input type="number" name="qty" class="form-control" id="qty" placeholder="Quantity" aria-describedby="quantity" required>
                         </div>
-
-                        <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" name="image" class="form-control" id="image" placeholder="image" aria-describedby="image" required>
-                        </div>
-
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
                 </div>
@@ -39,12 +37,12 @@
                                 <% features.forEach((feature, index) => { %>
                                     <tr>
                                         <td><%= ++index %></td>
-                                        <td><%= feature.name %></td>
+                                        <td><%= feature.category.name %></td>
                                         <td><%= feature.qty %></td>
-                                        <td><img src="http://localhost:3000/<%= feature.imageUrl %>" height="50"/></td>
+                                        <td><img src="http://localhost:3000/<%= feature.category.imageUrl %>" height="40"/></td>
                                         <td>
                                             <form action="/admin/item/<%= itemId %>/feature/<%= feature._id %>?_method=DELETE" method="post">
-                                                <button type="button" data-featureid="<%= feature._id %>" data-itemid="<%= itemId %>" data-name="<%= feature.name %>" data-qty="<%= feature.qty %>" class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>
+                                                <button type="button" data-feature_categoryid="<%= feature.category._id %>" data-featureid="<%= feature._id%>" data-itemid="<%= itemId %>" data-name="<%= feature.category.name %>" data-qty="<%= feature.qty %>" class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>
                                                 <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
                                             </form>
                                         </td>

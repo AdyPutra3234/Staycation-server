@@ -18,6 +18,12 @@ router.post('/category', adminController.addCategory);
 router.put('/category', adminController.editCategory);
 router.delete('/category/:id', adminController.deleteCategory);
 
+// end point Category Feature
+router.get('/feature_category', adminController.viewFeatureCategory);
+router.post('/feature_category', upload, adminController.addFeatureCategory);
+router.put('/feature_category', upload, adminController.editFeatureCategory);
+router.delete('/feature_category/:id', adminController.deleteFeatureCategory);
+
 // end point Bank
 router.get('/bank', adminController.viewBank);
 router.post('/bank',upload, adminController.addBank);
@@ -40,7 +46,7 @@ router.delete('/item/:itemId/images/:imageId', adminController.deleteImageItem);
 router.get('/item/detail/:id', adminController.viewDetailItem);
 
 // end point feature
-router.post('/item/:id/feature', upload, adminController.addItemFeature);
+router.post('/item/:id/feature', upload, adminController.addFeatureItem);
 router.put('/item/:itemId/feature/:featureId',upload, adminController.editFeature);
 router.delete('/item/:itemId/feature/:featureId', adminController.deleteFeature);
 

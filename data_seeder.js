@@ -63,21 +63,21 @@ const data = [
           ],
           featureId: [
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa09') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa10') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa11') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa12') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa13') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa14') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa15') },
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
             // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa16') }
+            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb05') },
@@ -85,7 +85,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb07') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb08') }
           ],
-          categoryId: '5e96cbe292b97300fc901111'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901111')
         },
         // Seattle Rain
         {
@@ -131,7 +131,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901111'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901111')
         },
   
         // Wodden Pit
@@ -154,22 +154,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cdb9') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -177,7 +161,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901111'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901111')
         },
   
         // Anggana
@@ -200,22 +184,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd12') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -223,7 +191,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901111'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901111')
         },
   
         // Green Park
@@ -246,22 +214,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd15') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -269,7 +221,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901112'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901112')
         },
   
         // Podo Wae
@@ -292,22 +244,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd18') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -315,7 +251,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901112'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901112')
         },
   
         // Silver Rain
@@ -338,22 +274,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd21') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -361,7 +281,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901112'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901112')
         },
   
         // Cashville
@@ -384,22 +304,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd24') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -407,7 +311,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901112'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901112')
         },
   
         // PS Wood
@@ -430,22 +334,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd27') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -453,7 +341,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901113'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901113')
         },
   
         // One Five
@@ -476,22 +364,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd30') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -499,7 +371,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901113'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901113')
         },
   
         // Minimal
@@ -522,22 +394,6 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90cd33') }
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -545,7 +401,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901113'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901113')
         },
   
         // Stays Home
@@ -568,22 +424,6 @@ const data = [
             // done
           ],
           featureId: [
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07') },
-            // done
-            { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08') }
           ],
           activityId: [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01') },
@@ -591,7 +431,7 @@ const data = [
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03') },
             { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04') }
           ],
-          categoryId: '5e96cbe292b97300fc901113'
+          categoryId: mongoose.Types.ObjectId('5e96cbe292b97300fc901113')
         },
   
       ]
@@ -754,6 +594,48 @@ const data = [
       ]
     },
     // end image
+    // start feature category 
+    {
+      'model': 'feature_category',
+      'documents': [
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902220'),
+          name: 'bedroom',
+          imageUrl: 'images/feature-1.png',
+        },
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902221'),
+          name: 'mbp/s',
+          imageUrl: 'images/feature-5.png',
+        },
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902222'),
+          name: 'living room',
+          imageUrl: 'images/feature-2.png',
+        },
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902223'),
+          name: 'bathroom',
+          imageUrl: 'images/feature-4.png',
+        },
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902224'),
+          name: 'dining room',
+          imageUrl: 'images/feature-3.png',
+        },
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902225'),
+          name: 'air conditioner',
+          imageUrl: 'images/feature-6.png',
+        },
+        {
+          _id: mongoose.Types.ObjectId('6e96cbe292b97300fc902226'),
+          name: 'refigrator',
+          imageUrl: 'images/feature-7.png',
+        },
+      ]
+    },
+    // end feature category
     // start feature
     {
       'model': 'feature',
@@ -761,132 +643,73 @@ const data = [
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa01'),
-          name: 'bedroom',
-          qty: 2,
-          imageUrl: 'images/feature-1.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902220'),
+          qty: 5,
+          itemId: [
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa02'),
-          name: 'living room',
-          qty: 23,
-          imageUrl: 'images/feature-2.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902221'),
+          qty: 20,
+          itemId: [ 
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa03'),
-          name: 'televison',
-          qty: 12,
-          imageUrl: 'images/feature-3.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902222'),
+          qty: 2,
+          itemId: [ 
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa04'),
-          name: 'televison',
-          qty: 5,
-          imageUrl: 'images/feature-4.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902223'),
+          qty: 3,
+          itemId: [ 
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa05'),
-          name: 'mbp/s',
-          qty: 5,
-          imageUrl: 'images/feature-5.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902224'),
+          qty: 1,
+          itemId: [ 
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa06'),
-          name: 'unit ready',
-          qty: 5,
-          imageUrl: 'images/feature-6.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902225'),
+          qty: 3,
+          itemId: [ 
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
         {
           // done
           _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa07'),
-          name: 'refigrator',
-          qty: 5,
-          imageUrl: 'images/feature-7.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa08'),
-          name: 'televion',
-          qty: 5,
-          imageUrl: 'images/feature-8.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
-        },
-        // item 2
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa09'),
-          name: 'bedroom',
+          category: mongoose.Types.ObjectId('6e96cbe292b97300fc902226'),
           qty: 2,
-          imageUrl: 'images/feature-1.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          itemId: [ 
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
+            mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
+          ]
         },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa10'),
-          name: 'living room',
-          qty: 23,
-          imageUrl: 'images/feature-2.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa11'),
-          name: 'televison',
-          qty: 12,
-          imageUrl: 'images/feature-3.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa12'),
-          name: 'televison',
-          qty: 5,
-          imageUrl: 'images/feature-4.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa13'),
-          name: 'mbp/s',
-          qty: 5,
-          imageUrl: 'images/feature-5.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa14'),
-          name: 'unit ready',
-          qty: 5,
-          imageUrl: 'images/feature-6.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa15'),
-          name: 'refigrator',
-          qty: 5,
-          imageUrl: 'images/feature-7.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        },
-        {
-          // done
-          _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90aa16'),
-          name: 'televion',
-          qty: 5,
-          imageUrl: 'images/feature-8.png',
-          itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        }
       ]
     },
     // end feature

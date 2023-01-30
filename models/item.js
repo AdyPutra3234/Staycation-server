@@ -34,10 +34,10 @@ const item = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    categoryId: [{
+    categoryId: {
         type: ObjectId,
         ref: 'category',
-    }],
+    },
     imageId: [{
         type: ObjectId,
         ref: 'image',

@@ -9,12 +9,12 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>invoice</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Title</th>
                         <th>Price</th>
                         <th>Member</th>
-                        <th>Bank Name</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -23,13 +23,26 @@
                     <% bookings.forEach((booking, index) => { %>
                         <tr>
                             <td><%= ++index %></td>
+                            <td><%= booking.invoice %></td>
                             <td><%= booking.startDate.toLocaleString() %></td>
                             <td><%= booking.endDate.toLocaleString() %></td>
                             <td><%= booking.itemId.title %></td>
                             <td><strong>$ </strong><%= booking.itemId.price %></td>
                             <td><%= booking.memberId.firstName %>  <%= booking.memberId.lastName %></td>
-                            <td><%= booking.bankId.bankName %></td>
-                            <td><%= booking.payments.status %></td>
+                            <% switch (booking.payments.status) {
+                                    case 'Process': %>
+                                        <td style="color: blue;"><%= booking.payments.status %></td>
+                                        <% break;
+                              
+                                    case 'Accepted': %>
+                                        <td style="color: green;"><%= booking.payments.status %></td>
+                                        <% break;
+                               
+                                    case 'Rejected': %>
+                                        <td style="color: red;"><%= booking.payments.status %></td>
+                                        <% break;
+                
+                            } %>
                             <td>
                                 <a href="/admin/booking/<%= booking._id %>" class="btn btn-info">detail</i></a>
                             </td>

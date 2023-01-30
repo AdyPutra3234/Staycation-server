@@ -3,6 +3,7 @@ const Bank = require('../models/bank');
 const Item = require('../models/item');
 const Images = require('../models/image');
 const Feature = require('../models/feature');
+const FeatureCategory = require('../models/feature_category');
 const Activity = require('../models/activity');
 const Users = require('../models/users');
 const Booking = require('../models/booking');
@@ -173,6 +174,118 @@ module.exports = {
             req.flash('isShow', 'show')
 
             res.redirect('/admin/category');
+        }
+    },
+    viewFeatureCategory: async (req, res) => {
+        try {
+            const categories = await FeatureCategory.find()
+
+            const message = req.flash('alertMessage');
+            const status = req.flash('alertStatus');
+            const show = req.flash('isShow');
+            const alert = {
+                message,
+                status,
+                show,
+            };
+
+            res.render('admin/category_feature/category_feature', {
+                categories,
+                alert,
+                username: req.session.user.username,
+            });
+        } catch(error) {
+            req.flash('alertMessage', error.message)
+            req.flash('alertStatus', 'danger')
+            res.redirect('admin/category_feature/category_feature');
+        }
+    },
+    addFeatureCategory: async (req, res) => {
+        try {
+            const { name } = req.body;
+            const image = req.file;
+            
+            console.log('add feature category');
+
+            if (image) {
+                await FeatureCategory.create({
+                    name,
+                    imageUrl: `images/${image.filename}`,
+                });
+                
+                req.flash('alertMessage', 'Success Add Category');
+                req.flash('alertStatus', 'success');
+                req.flash('isShow', 'show');
+                res.redirect('/admin/feature_category');
+            }
+    
+        } catch(error) {
+            req.flash('alertMessage', error.message)
+            req.flash('alertStatus', 'danger')
+            req.flash('isShow', 'show')
+            res.redirect('/admin/feature_category');
+        }
+    },
+    editFeatureCategory: async (req, res) => {
+        try {
+            const {id, name} = req.body;
+            const image = req.file;
+            const category = await FeatureCategory.findOne({_id: id});
+
+            if (image) {
+                await fs.unlink(path.join(`public/${category.imageUrl}`));
+                category.imageUrl = `images/${image.filename}`;
+            }
+
+            category.name = name;
+            await category.save();
+
+            req.flash('alertMessage', 'Success Edit Category');
+            req.flash('alertStatus', 'success');
+            req.flash('isShow', 'show')
+
+    
+            res.redirect('/admin/feature_category');
+        } catch (error) {
+            req.flash('alertMessage', error.message)
+            req.flash('alertStatus', 'danger')
+            req.flash('isShow', 'show')
+
+            res.redirect('/admin/feature_category');
+        }
+    },
+    deleteFeatureCategory: async (req, res) => {
+        try {
+            const {id} = req.params;
+            const category = await FeatureCategory.findOne({_id: id});
+            const feature = await Feature.findOne({ category: category._id });
+            
+            feature.itemId.forEach( async (itemId) => {
+                const item = await Item.findOne({ _id: itemId });
+                item.featureId.pull({ _id: feature._id });
+                await item.save();
+            })
+
+            const pathImage = path.join(`public/${category.imageUrl}`);
+            
+            if (fs.existsSync(pathImage)) {
+                await fs.unlink(pathImage);
+            }
+
+            feature.remove();
+            category.remove();
+
+            req.flash('alertMessage', 'Success Deleted Category');
+            req.flash('alertStatus', 'success');
+            req.flash('isShow', 'show')
+    
+            res.redirect('/admin/feature_category');
+        } catch (error) {
+            req.flash('alertMessage', error.message)
+            req.flash('alertStatus', 'danger')
+            req.flash('isShow', 'show')
+
+            res.redirect('/admin/feature_category');
         }
     },
     viewBank: async (req, res) => {
@@ -371,7 +484,7 @@ module.exports = {
             const {id} = req.params;
             const { imageId: image } = await Item.findOne({_id: id})
                 .populate({ path: 'imageId', select: 'id imageUrl'});
-    
+            
             const message = req.flash('alertMessage');
             const status = req.flash('alertStatus');
             const show = req.flash('isShow');
@@ -558,10 +671,24 @@ module.exports = {
     },
     viewDetailItem: async (req, res) => {
         const { id } = req.params;
-
+        
         try {
-            const features = await Feature.find({ itemId: id });
+            
+            const item = await Item.findOne({ _id: id })
+                .populate({
+                    path: 'featureId',
+                    populate: {
+                        path: 'category',
+                        select: 'name imageUrl',
+                        model: 'feature_category'
+                    },
+                });
+
+            const featureCategories = await FeatureCategory.find();
+            
+            const features = item.featureId;
             const activities = await Activity.find({ itemId: id });
+
 
             const message = req.flash('alertMessage');
             const status = req.flash('alertStatus');
@@ -576,8 +703,9 @@ module.exports = {
             res.render('admin/item/detail/detail_page', {
                 itemId: id,
                 alert,
-                features,
+                features, 
                 activities,
+                featureCategories, // for data select input
                 username: req.session.user.username,
             });
         } catch (error) {
@@ -588,30 +716,55 @@ module.exports = {
             res.redirect(`/admin/item/detail/${id}`);
         }
     },
-    addItemFeature: async (req, res) => {
+    addFeatureItem: async (req, res) => {
         const { id } = req.params;
-        const { name, qty } = req.body;
-        const image = req.file;
+        const { featureCategoryId, qty } = req.body;
 
         try {
-            if (image) {
-                const item = await Item.findOne({ _id: id });
-                const feature = await Feature.create({
-                    name,
-                    qty,
-                    imageUrl: `images/${image.filename}`,
-                    itemId: item._id,
-                });
-    
-                item.featureId.push({ _id : feature._id });
-                await item.save();
+            const item = await Item.findOne({ _id: id })
+                .populate('featureId');
 
-                req.flash('alertMessage', 'Success add feature');
-                req.flash('alertStatus', 'success');
+            let isFeatureItemAlreadyExists = false;
+
+            item.featureId.forEach((feature) => {
+                feature.category == featureCategoryId ? isFeatureItemAlreadyExists = true : isFeatureItemAlreadyExists = false;
+            });
+
+            if (isFeatureItemAlreadyExists) {
+                req.flash('alertMessage', 'Feature already exists');
+                req.flash('alertStatus', 'danger');
                 req.flash('isShow', 'show');
 
-            res.redirect(`/admin/item/detail/${id}`);
-            } 
+                res.redirect(`/admin/item/detail/${id}`);
+            }
+            else {
+                const feature = await Feature.findOne({ category: featureCategoryId, qty });
+
+                if (feature) {
+                    item.featureId.push({ _id: feature._id });
+                    await item.save();
+
+                    feature.itemId.push({ _id: item._id });
+                    await feature.save();
+                } else {
+                    const newFeature = await Feature.create({
+                        qty,
+                        category: featureCategoryId,
+                    });
+
+                    newFeature.itemId.push({ _id: item._id});
+                    await newFeature.save();
+
+                    item.featureId.push({ _id: newFeature._id});
+                    await item.save();
+                }
+                
+                    req.flash('alertMessage', 'Success add feature');
+                    req.flash('alertStatus', 'success');
+                    req.flash('isShow', 'show');
+        
+                    res.redirect(`/admin/item/detail/${id}`);
+            }
         } catch (error) {
             req.flash('alertMessage', error.message);
             req.flash('alertStatus', 'danger');
@@ -622,27 +775,44 @@ module.exports = {
     },
     editFeature: async (req, res) => {
         const { itemId, featureId } = req.params;
-        const { name, qty } = req.body;
-        const image = req.file;
+        const { featureCategoryId, qty } = req.body;
 
         try {
 
             const feature = await Feature.findOne({ _id: featureId });
+            const item = await Item.findOne({ _id: itemId }).populate({ path: 'featureId', select: 'category' });
+            let isFeatureCategoryItemAlreadyExists = false;
+            item.featureId.forEach((feature) => {
+                if (feature.category == featureCategoryId) isFeatureCategoryItemAlreadyExists = true;
+            });
 
-            if (image) {
-                await fs.unlink(path.join(`public/${feature.imageUrl}`));
-                feature.imageUrl = `images/${image.filename}`;
+            console.log(isFeatureCategoryItemAlreadyExists);
+            console.log(featureCategoryId);
+            console.log(item.featureId);
+
+            if (isFeatureCategoryItemAlreadyExists) {
+                if (feature.category == featureCategoryId) {
+                    req.flash('alertMessage', 'Success update feature');
+                    req.flash('alertStatus', 'success');
+                    req.flash('isShow', 'show');
+                    
+                    feature.category = featureCategoryId;
+                    feature.qty = qty;
+                    await feature.save();
+                } else {
+                    req.flash('alertMessage', 'Can not save, Feature already exists');
+                    req.flash('alertStatus', 'danger');
+                    req.flash('isShow', 'show');
+                }                
+            } else {
+                req.flash('alertMessage', 'Success update feature');
+                req.flash('alertStatus', 'success');
+                req.flash('isShow', 'show');
+
+                feature.category = featureCategoryId;
+                feature.qty = qty;
+                await feature.save();
             }
-
-            feature.name = name;
-            feature.qty = qty;
-            
-            await feature.save()
-
-            req.flash('alertMessage', 'Success update feature');
-            req.flash('alertStatus', 'success');
-            req.flash('isShow', 'show');
-
             res.redirect(`/admin/item/detail/${itemId}`);
 
         } catch (error) {
@@ -661,9 +831,14 @@ module.exports = {
                 .populate('featureId');
 
             await item.featureId.pull({ _id: featureId});
-            await fs.unlink(path.join(`public/${feature.imageUrl}`))
-            await feature.remove();
             await item.save();
+
+            await feature.itemId.pull({ _id: item._id });
+            await feature.save();
+
+            if (feature.itemId.length === 0) {
+                await feature.remove();
+            }
 
             req.flash('alertMessage', 'Success delete feature');
             req.flash('alertStatus', 'success');

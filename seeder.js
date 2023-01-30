@@ -6,13 +6,14 @@ const bank = require('./models/bank');
 const booking = require('./models/booking');
 const category = require('./models/category');
 const feature = require('./models/feature');
+const featureCategory = require('./models/feature_category');
 const image = require('./models/image');
 const item = require('./models/item');
 const member = require('./models/member');
 const users = require('./models/users');
 
 const collections = [
-  activity, bank, booking, category, feature, image, item, member, users
+  activity, bank, booking, category, featureCategory, feature, image, item, member, users
 ];
 
 mongoose.connect('mongodb://localhost:27017/db-staycation')

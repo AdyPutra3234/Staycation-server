@@ -9,18 +9,17 @@
         </div>
         <form id ="formUpdateFeature" method="post" enctype="multipart/form-data">
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control name" id="featureName" placeholder="feature name" aria-describedby="feature name" required>
-                </div>
+              <input type="hidden" class="featureCategoryId"/>
+              <label for="category">Feature</label>
+              <select class="form-control" name="featureCategoryId">
+                  <option class="default_categoryId"> Select category </option>
+                  <% featureCategories.forEach(category => { %>
+                      <option value="<%= category._id %>"> <%= category.name %> </option>
+                  <% })%>
+              </select>
                 <div class="form-group">
                     <label for="qty">Quantity</label>
                     <input type="text" name="qty" class="form-control qty" id="quantity" placeholder="quantity" aria-describedby="quantity" required>
-                </div>
-                <div class="form-group">
-                    <label for="featureImage">Image</label>
-                    <input type="file" name="image" class="form-control" id="featureImage" aria-describedby="image">
-                    <span>choose image to update</span>
                 </div>
             </div>
             <div class="modal-footer">

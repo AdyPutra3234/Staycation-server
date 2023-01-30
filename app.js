@@ -17,6 +17,9 @@ const usersRouter = require('./routes/users');
 // Router admin
 const adminRouter = require('./routes/admin');
 
+// Router API
+const apiRouter = require('./routes/api');
+
 const app = express();
 
 // view engine setup
@@ -43,6 +46,7 @@ app.use('/ckeditor4', express.static(path.join(__dirname, 'node_modules/ckeditor
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/api/v1', apiRouter );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

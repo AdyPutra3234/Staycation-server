@@ -105,6 +105,7 @@
         })
 
         $('#tableFeature').on('click', '.btn-update', function() {
+            let featureCategoryId = $(this).data("feature_categoryid");
             let featureId = $(this).data("featureid");
             let itemId = $(this).data("itemid");
             let name = $(this).data("name");
@@ -112,7 +113,11 @@
             
             $('.name').val(name);
             $('.qty').val(qty);
+            $('.featureCategoryId').val(featureCategoryId);
 
+            $('.default_categoryId').val(featureCategoryId);
+            $('.default_categoryId').text(name);
+            
             $('#editModal_feature').modal('show');
             $('#formUpdateFeature').attr('action', `/admin/item/${itemId}/feature/${featureId}?_method=PUT`);
         })

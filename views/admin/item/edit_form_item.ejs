@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label for="category">Category</label>
                     <select class="form-control" name="categoryId">
-                        <option value="<%= item.categoryId[0]._id %>"><%= item.categoryId[0].name %></option>
+                        <option value="<%= item.categoryId._id %>"><%= item.categoryId.name %></option>
                         <% categories.forEach(category => { %>
                             <option value="<%= category._id %>"> <%= category.name %> </option>
                         <% })%>
