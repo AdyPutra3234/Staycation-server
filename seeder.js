@@ -16,7 +16,7 @@ const collections = [
   activity, bank, booking, category, featureCategory, feature, image, item, member, users
 ];
 
-mongoose.connect('mongodb://localhost:27017/db-staycation')
+mongoose.connect(`${process.env.DATABASE_URL}/${process.env.DATABASE_NAME}`)
   .then(() => {
     console.log('MONGODB Connecttion Open')
 

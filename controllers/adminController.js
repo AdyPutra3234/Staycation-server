@@ -109,6 +109,7 @@ module.exports = {
             };
 
             res.render('admin/category/category', {
+                baseUrl: process.env.BASE_URL,
                 categories,
                 alert,
                 username: req.session.user.username,
@@ -301,6 +302,7 @@ module.exports = {
                 show,
             };
             res.render('admin/bank/bank', {
+                baseUrl: process.env.BASE_URL,
                 banks,
                 alert,
                 username: req.session.user.username,
@@ -701,6 +703,7 @@ module.exports = {
             };
 
             res.render('admin/item/detail/detail_page', {
+                baseUrl: process.env.BASE_URL,
                 itemId: id,
                 alert,
                 features, 
@@ -970,6 +973,7 @@ module.exports = {
         };
 
         res.render('admin/booking/detail_booking', {
+            baseUrl: process.env.BASE_URL,
             alert,
             booking,
             username: req.session.user.username,

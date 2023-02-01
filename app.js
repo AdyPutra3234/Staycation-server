@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
@@ -8,7 +9,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/db-staycation')
+mongoose.connect(`${process.env.DATABASE_URL}/db-staycation`)
   .then(() => console.log('success to connect database'));
 
 const indexRouter = require('./routes/index');

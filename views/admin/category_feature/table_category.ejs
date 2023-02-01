@@ -22,7 +22,7 @@
                         <tr>
                             <td><%= ++index %></td>
                             <td><%= category.name %></td>
-                            <td class="d-flex justify-content-center"><img src="http://localhost:3000/<%= category.imageUrl %>" height="50"/></td>
+                            <td class="d-flex justify-content-center"><img src="<%= baseUrl %>/<%= category.imageUrl %>" height="50"/></td>
                             <td>
                                 <form action="/admin/feature_category/<%= category._id %>?_method=DELETE" method="post">
                                     <button type="button" data-id="<%= category.id %>" data-name="<%= category.name %>" class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>

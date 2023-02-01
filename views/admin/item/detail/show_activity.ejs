@@ -41,7 +41,7 @@
                                         <td><%= ++index %></td>
                                         <td><%= activity.name %></td>
                                         <td><%= activity.type %></td>
-                                        <td><img src="http://localhost:3000/<%= activity.imageUrl %>" height="50"/></td>
+                                        <td><img src="<%= baseUrl %>/<%= activity.imageUrl %>" height="50"/></td>
                                         <td>
                                             <form action="/admin/item/<%= itemId %>/activity/<%= activity._id %>?_method=DELETE" method="post">
                                                 <button type="button" data-activityid="<%= activity._id %>" data-itemid="<%= itemId %>" data-name="<%= activity.name %>" data-type="<%= activity.type %>" class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>

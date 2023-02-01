@@ -39,7 +39,7 @@
                                         <td><%= ++index %></td>
                                         <td><%= feature.category.name %></td>
                                         <td><%= feature.qty %></td>
-                                        <td><img src="http://localhost:3000/<%= feature.category.imageUrl %>" height="40"/></td>
+                                        <td><img src="<%= baseUrl %>/<%= feature.category.imageUrl %>" height="40"/></td>
                                         <td>
                                             <form action="/admin/item/<%= itemId %>/feature/<%= feature._id %>?_method=DELETE" method="post">
                                                 <button type="button" data-feature_categoryid="<%= feature.category._id %>" data-featureid="<%= feature._id%>" data-itemid="<%= itemId %>" data-name="<%= feature.category.name %>" data-qty="<%= feature.qty %>" class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>

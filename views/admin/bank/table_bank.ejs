@@ -25,7 +25,7 @@
                             <td><%= bank.bankName %></td>
                             <td><%= bank.accountNumber %></td>
                             <td><%= bank.userName %></td>
-                            <td><img src="http://localhost:3000/<%= bank.imageUrl %>" height="50"/></td>
+                            <td><img src="<%= baseUrl %>/<%= bank.imageUrl %>" height="50"/></td>
                             <td>
                                 <form action="/admin/bank/<%= bank._id %>?_method=DELETE" method="post">
                                     <button type="button" data-id="<%= bank.id %>" data-bankname="<%= bank.bankName %>" data-username="<%= bank.userName %>" data-accountnumber="<%= bank.accountNumber %>"class="btn btn-warning btn-circle btn-update"><i class="fas fa-edit"></i></button>
