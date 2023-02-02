@@ -9,7 +9,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const mongoose = require('mongoose');
 
-mongoose.connect(`${process.env.DATABASE_URL}/db-staycation`)
+mongoose.connect(`${process.env.DATABASE_URL}`)
   .then(() => console.log('success to connect database'));
 
 const indexRouter = require('./routes/index');
