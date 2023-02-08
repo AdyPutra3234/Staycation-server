@@ -498,6 +498,7 @@ module.exports = {
             };
             
             res.render('admin/item/item', {
+                baseUrl: process.env.BASE_URL,
                 itemId: id,
                 image,
                 alert,
