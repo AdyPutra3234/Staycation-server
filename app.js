@@ -7,9 +7,8 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
+const allowCrossDomain = require('./midleware/allowCors');
 const mongoose = require('mongoose');
-
-const port = process.env.PORT || 3000;
 
 
 mongoose.connect(`${process.env.DATABASE_URL}`)
@@ -47,9 +46,12 @@ app.use(express.static("public"))
 app.use('/sb-admin-2', express.static(path.join(__dirname, 'node_modules/startbootstrap-sb-admin-2')));
 app.use('/ckeditor4', express.static(path.join(__dirname, 'node_modules/ckeditor4')));
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+
+app.use(allowCrossDomain);
 app.use('/api/v1', apiRouter );
 
 // catch 404 and forward to error handler
